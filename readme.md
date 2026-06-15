@@ -2,7 +2,7 @@
 
 > **Mata Pelajaran**: Pemrograman Web Lanjut
 > **Topik**: Object-Oriented Programming (OOP), MVC Architecture, PDO Database
-> **Tenggat**: 30 Juni 2026
+> **Tenggat**: 14 Juli 2026
 
 ---
 
@@ -64,82 +64,72 @@ File `.htaccess` di root sudah disediakan untuk redirect ke folder `public/`.
 ## 📁 STRUKTUR FOLDER
 
 tugas_ujian_semester/
-├── .env # Konfigurasi environment (buat dari .env.example)
-├── .env.example # Contoh konfigurasi (JANGAN diubah)
+├── .env.example # Konfigurasi environment
 ├── .htaccess # Redirect ke public/
+├── README.md # Dokumentasi lengkap
 │
-├── app/ # Core Application
+├── app/
 │ ├── Config/
-│ │ ├── Database.php # Singleton PDO Connection
-│ │ └── Env.php # Environment Variable Loader # Low Priority
+│ │ ├── Database.php # Low Priority # Singleton PDO (TODO)
+│ │ └── Env.php # Low Priority # Environment loader (TODO)
 │ │
-│ ├── Controllers/ # Business Logic
-│ │ ├── AuthController.php # Autentikasi (LOGIN, REGISTER, LOGOUT) # Highest Priority
-│ │ ├── DashboardController.php # Dashboard & Profil # Medium Priority
-│ │ ├── HomeController.php # Halaman Publik # Low Priority
-│ │ └── PostController.php # CRUD Posts # Highest Priority
+│ ├── Controllers/
+│ │ ├── AuthController.php # Highest Priority # Auth lengkap (HARUS DI-IMPROVE)
+│ │ ├── DashboardController.php # Medium Priority # Dashboard (TODO)
+│ │ ├── HomeController.php # Medium Priority # Home publik (TODO)
+│ │ └── PostController.php # Medium Priority # CRUD Posts (TODO)
 │ │
-│ ├── Core/ # Base Classes
-│ │ ├── Controller.php # Base Controller # Medium Priority
-│ │ ├── Model.php # Base Model (Query Builder) # Highest Priority
-│ │ ├── Router.php # HTTP Router # Highest Priority
-│ │ └── View.php # Template Engine (BONUS)
+│ ├── Core/
+│ │ ├── Controller.php # Medium Priority # Base Controller (TODO)
+│ │ ├── Model.php # Highest Priority # Base Model + Query Builder (TODO)
+│ │ ├── Router.php # Highest Priority # HTTP Router dengan parameter dinamis (TODO)
+│ │ └── View.php # BONUS: Template engine
 │ │
-│ ├── Helpers/ # Helper Functions (opsional)
+│ ├── Helpers/
+│ │ └── functions.php # BONUS: Helper functions
 │ │
-│ ├── Middleware/ # HTTP Middleware
-│ │ ├── AuthMiddleware.php # Cek autentikasi # Medium Priority
-│ │ └── GuestMiddleware.php # Cek guest (belum login) # Medium Priority
+│ ├── Middleware/
+│ │ ├── AuthMiddleware.php # Medium Priority # Cek login (TODO)
+│ │ └── GuestMiddleware.php # Medium Priority # Cek guest (TODO)
 │ │
-│ ├── Models/ # Data Access Layer
-│ │ ├── PasswordReset.php # Token Reset Password (BONUS)
-│ │ ├── Post.php # Model Post # Medium Priority
-│ │ └── User.php # Model User # Medium Priority
+│ ├── Models/
+│ │ ├── PasswordReset.php # BONUS: Token reset
+│ │ ├── Post.php # Medium Priority # Model Post (TODO)
+│ │ └── User.php # Medium Priority # Model User (TODO)
 │ │
-│ └── Views/ # Presentation Layer
-│ ├── auth/ # Halaman Autentikasi
+│ └── Views/ # ✅ Sudah lengkap dengan Tailwind CSS
+│ ├── auth/
 │ │ ├── forgot-password.php
 │ │ ├── login.php
 │ │ ├── register.php
 │ │ └── reset-password.php
-│ │
-│ ├── dashboard/ # Halaman Dashboard
+│ ├── dashboard/
 │ │ ├── index.php
 │ │ └── profile.php
-│ │
-│ ├── home/ # Halaman Publik
-│ │ ├── about.php
-│ │ ├── contact.php
+│ ├── home/
 │ │ └── index.php
-│ │
-│ ├── layouts/ # Layout Templates
-│ │ └── main.php # Layout Utama (sudah ada)
-│ │
-│ └── posts/ # Halaman Posts
+│ ├── layouts/
+│ │ └── main.php
+│ └── posts/
 │ ├── create.php
-│ ├── edit.php
 │ ├── index.php
 │ └── show.php
 │
-├── database/ # Database Files
-│ ├── migrations/ # SQL Migration Files
-│ │ └── 001_initial_schema.sql
-│ └── seeds/ # Database Seeder (opsional)
-│ └── UserSeeder.php
+├── database/
+│ ├── migrations/
+│ │ └── 001_initial_schema.sql # ✅ Skema database lengkap
+│ └── seeds/
+│ └── UserSeeder.php # BONUS: Database seeder
 │
-├── public/ # Document Root
-│ ├── .htaccess # URL Rewrite Rules
-│ ├── assets/ # Static Assets
-│ │ ├── css/
-│ │ ├── images/
-│ │ └── js/
-│ └── index.php # Entry Point Aplikasi (sudah ada)
+├── public/
+│ ├── .htaccess
+│ ├── assets/ # Folder untuk CSS/JS/Images
+│ └── index.php # ✅ Entry point (sudah ada)
 │
-├── routes/ # Route Definitions
-│ └── web.php # Web Routes # Medium Priority
+├── routes/
+│ └── web.php # Medium Priority # Definisikan semua route (TODO)
 │
-└── tests/ # Unit Tests (BONUS)
-└── (folder kosong)
+└── tests/ # Folder untuk unit test (BONUS)
 
 **Keterangan:**
 
