@@ -63,73 +63,48 @@ File `.htaccess` di root sudah disediakan untuk redirect ke folder `public/`.
 
 ## 📁 STRUKTUR FOLDER
 
+```text
 tugas_ujian_semester/
-├── .env.example # Konfigurasi environment
-├── .htaccess # Redirect ke public/
-├── README.md # Dokumentasi lengkap
-│
+├── README.md
 ├── app/
-│ ├── Config/
-│ │ ├── Database.php # Low Priority # Singleton PDO (TODO)
-│ │ └── Env.php # Low Priority # Environment loader (TODO)
-│ │
-│ ├── Controllers/
-│ │ ├── AuthController.php # Highest Priority # Auth lengkap (HARUS DI-IMPROVE)
-│ │ ├── DashboardController.php # Medium Priority # Dashboard (TODO)
-│ │ ├── HomeController.php # Medium Priority # Home publik (TODO)
-│ │ └── PostController.php # Medium Priority # CRUD Posts (TODO)
-│ │
-│ ├── Core/
-│ │ ├── Controller.php # Medium Priority # Base Controller (TODO)
-│ │ ├── Model.php # Highest Priority # Base Model + Query Builder (TODO)
-│ │ ├── Router.php # Highest Priority # HTTP Router dengan parameter dinamis (TODO)
-│ │ └── View.php # BONUS: Template engine
-│ │
-│ ├── Helpers/
-│ │ └── functions.php # BONUS: Helper functions
-│ │
-│ ├── Middleware/
-│ │ ├── AuthMiddleware.php # Medium Priority # Cek login (TODO)
-│ │ └── GuestMiddleware.php # Medium Priority # Cek guest (TODO)
-│ │
-│ ├── Models/
-│ │ ├── PasswordReset.php # BONUS: Token reset
-│ │ ├── Post.php # Medium Priority # Model Post (TODO)
-│ │ └── User.php # Medium Priority # Model User (TODO)
-│ │
-│ └── Views/ # ✅ Sudah lengkap dengan Tailwind CSS
-│ ├── auth/
-│ │ ├── forgot-password.php
-│ │ ├── login.php
-│ │ ├── register.php
-│ │ └── reset-password.php
-│ ├── dashboard/
-│ │ ├── index.php
-│ │ └── profile.php
-│ ├── home/
-│ │ └── index.php
-│ ├── layouts/
-│ │ └── main.php
-│ └── posts/
-│ ├── create.php
-│ ├── index.php
-│ └── show.php
-│
+│   ├── Config/
+│   │   ├── Database.php
+│   │   └── Env.php
+│   ├── Controllers/
+│   │   ├── AuthController.php
+│   │   ├── DashboardController.php
+│   │   ├── HomeController.php
+│   │   └── PostController.php
+│   ├── Core/
+│   │   ├── Controller.php
+│   │   ├── Model.php
+│   │   ├── Router.php
+│   │   └── View.php
+│   ├── Helpers/
+│   │   └── functions.php
+│   ├── Middleware/
+│   │   ├── AuthMiddleware.php
+│   │   └── GuestMiddleware.php
+│   ├── Models/
+│   │   ├── PasswordReset.php
+│   │   ├── Post.php
+│   │   └── User.php
+│   └── Views/
+│       ├── auth/
+│       ├── dashboard/
+│       ├── home/
+│       ├── layouts/
+│       └── posts/
 ├── database/
-│ ├── migrations/
-│ │ └── 001_initial_schema.sql # ✅ Skema database lengkap
-│ └── seeds/
-│ └── UserSeeder.php # BONUS: Database seeder
-│
+│   ├── migrations/
+│   └── seeds/
 ├── public/
-│ ├── .htaccess
-│ ├── assets/ # Folder untuk CSS/JS/Images
-│ └── index.php # ✅ Entry point (sudah ada)
-│
+│   ├── assets/
+│   └── index.php
 ├── routes/
-│ └── web.php # Medium Priority # Definisikan semua route (TODO)
-│
-└── tests/ # Folder untuk unit test (BONUS)
+│   └── web.php
+└── tests/
+```
 
 **Keterangan:**
 
